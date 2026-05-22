@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Calendly Clone - Full Stack Scheduling Platform
 
 A clean, modern scheduling platform inspired by Calendly. Built with a React & Tailwind CSS frontend, Node.js & Express backend, and a pure MySQL database layer (No ORMs, optimized using raw SQL queries for simplicity and interview preparation).
@@ -164,4 +164,4 @@ Make sure you have **MySQL** running locally.
 ---
 
 
-=======
+
