@@ -1,6 +1,6 @@
 -- Seed Sample Data for Calendly Clone
 
-USE `calendly_db`;
+USE `railway`;
 
 -- Insert Event Types
 INSERT INTO `event_types` (`title`, `slug`, `description`, `duration`) VALUES
