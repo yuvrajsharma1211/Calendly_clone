@@ -37,7 +37,7 @@ const BookingConfirmation = () => {
             <CheckCircle2 className="h-10 w-10 stroke-[2]" />
           </div>
           <h2 className="text-xl font-bold text-slate-800 tracking-tight">Confirmed!</h2>
-          <p className="text-slate-400 text-xs mt-1">You are scheduled with John Doe.</p>
+          <p className="text-slate-400 text-xs mt-1">You are scheduled with John.</p>
         </div>
 
         {meeting ? (

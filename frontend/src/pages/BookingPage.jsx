@@ -248,7 +248,7 @@ const BookingPage = () => {
                 Back
               </button>
             )}
-            <span className="text-[10px] uppercase font-bold tracking-wider text-slate-400">Host: John Doe</span>
+            <span className="text-[10px] uppercase font-bold tracking-wider text-slate-400">Host: John</span>
             <h2 className="text-xl font-bold text-slate-800 tracking-tight leading-tight">{eventDetails.title}</h2>
           </div>
 
