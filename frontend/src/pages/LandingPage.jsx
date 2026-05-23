@@ -320,7 +320,7 @@ const LandingPage = () => {
                 <div>
                   <span className="text-[10px] uppercase font-bold text-slate-400 block tracking-wider">Call Us</span>
                   <span className="text-sm font-semibold text-slate-700">
-                    +1 (800) 555-0199
+                    +91 9876543210
                   </span>
                 </div>
               </div>
