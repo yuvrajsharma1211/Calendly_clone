@@ -10,7 +10,7 @@ A clean, modern scheduling platform inspired by Calendly. Built with a React & T
 </p>
 
 <p align="center">
-   <strong style="font-size:16px">🚀 Live Demo:</strong>
+   <strong style="font-size:16px">Live Demo:</strong>
    <a href="https://calendly-clone-ten-bay.vercel.app/" target="_blank" rel="noopener noreferrer" style="margin-left:8px">https://calendly-clone-ten-bay.vercel.app/</a>
 </p>
 
