@@ -3,6 +3,17 @@
 
 A clean, modern scheduling platform inspired by Calendly. Built with a React & Tailwind CSS frontend, Node.js & Express backend, and a pure MySQL database layer (No ORMs, optimized using raw SQL queries for simplicity and interview preparation).
 
+<p align="center">
+   <a href="https://calendly-clone-ten-bay.vercel.app/" target="_blank" rel="noopener noreferrer">
+      <img src="https://img.shields.io/badge/Live%20Demo-Visit%20App-brightgreen?style=for-the-badge&logo=vercel" alt="Live Demo" />
+   </a>
+</p>
+
+<p align="center">
+   <strong style="font-size:16px">🚀 Live Demo:</strong>
+   <a href="https://calendly-clone-ten-bay.vercel.app/" target="_blank" rel="noopener noreferrer" style="margin-left:8px">https://calendly-clone-ten-bay.vercel.app/</a>
+</p>
+
 ---
 
 ## 🌟 Key Features
