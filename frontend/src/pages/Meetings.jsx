@@ -60,10 +60,10 @@ const Meetings = () => {
   const currentMeetingsList = activeTab === 'upcoming' ? meetings.upcoming : meetings.past;
 
   return (
-    <div className="space-y-6 flex-1 flex flex-col">
+    <div className="space-y-5 sm:space-y-6 flex-1 flex flex-col min-w-0">
       {/* Header section */}
       <div>
-        <h2 className="text-2xl font-bold text-slate-800 tracking-tight">Scheduled Meetings</h2>
+        <h2 className="text-xl sm:text-2xl font-bold text-slate-800 tracking-tight">Scheduled Meetings</h2>
         <p className="text-slate-500 text-sm mt-1">Track and cancel upcoming or review past meetings.</p>
       </div>
 
@@ -74,10 +74,10 @@ const Meetings = () => {
       )}
 
       {/* Tabs selector */}
-      <div className="flex border-b border-slate-200">
+      <div className="flex gap-2 border-b border-slate-200 overflow-x-auto">
         <button
           onClick={() => setActiveTab('upcoming')}
-          className={`px-6 py-3.5 text-sm font-semibold border-b-2 transition-all ${
+          className={`px-4 sm:px-6 py-3.5 text-sm font-semibold border-b-2 whitespace-nowrap transition-all ${
             activeTab === 'upcoming'
               ? 'border-brand-500 text-brand-500 font-bold'
               : 'border-transparent text-slate-400 hover:text-slate-700'
@@ -87,7 +87,7 @@ const Meetings = () => {
         </button>
         <button
           onClick={() => setActiveTab('past')}
-          className={`px-6 py-3.5 text-sm font-semibold border-b-2 transition-all ${
+          className={`px-4 sm:px-6 py-3.5 text-sm font-semibold border-b-2 whitespace-nowrap transition-all ${
             activeTab === 'past'
               ? 'border-brand-500 text-brand-500 font-bold'
               : 'border-transparent text-slate-400 hover:text-slate-700'
@@ -121,7 +121,7 @@ const Meetings = () => {
                 return (
                   <div
                     key={meeting.id}
-                    className={`bg-white border border-slate-100 rounded-2xl p-6 shadow-soft hover:shadow-md transition-all duration-200 flex flex-col md:flex-row justify-between items-start md:items-center gap-6 relative overflow-hidden`}
+                    className={`bg-white border border-slate-100 rounded-2xl p-5 sm:p-6 shadow-soft hover:shadow-md transition-all duration-200 flex flex-col md:flex-row justify-between items-start md:items-center gap-5 sm:gap-6 relative overflow-hidden`}
                   >
                     {/* Status side bar Indicator */}
                     <div
@@ -134,7 +134,7 @@ const Meetings = () => {
                       }`}
                     ></div>
 
-                    <div className="space-y-3 flex-1">
+                    <div className="space-y-3 flex-1 min-w-0">
                       {/* Event details tag */}
                       <div className="flex items-center gap-2">
                         <span className={`text-[10px] font-bold px-2 py-0.5 rounded ${
@@ -154,7 +154,7 @@ const Meetings = () => {
                       </div>
 
                       {/* Invitee Contact grid */}
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 sm:gap-x-6 gap-y-1">
                         <div className="flex items-center gap-2 text-sm text-slate-700">
                           <User className="h-4 w-4 text-slate-400" />
                           <span className="font-semibold">{meeting.invitee_name}</span>

@@ -66,10 +66,10 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="space-y-8 flex-1 flex flex-col">
+    <div className="space-y-6 sm:space-y-8 flex-1 flex flex-col min-w-0">
       {/* Welcome Banner */}
       <div>
-        <h2 className="text-2xl font-bold text-slate-800 tracking-tight">Welcome back, User!</h2>
+        <h2 className="text-xl sm:text-2xl font-bold text-slate-800 tracking-tight">Welcome back, User!</h2>
         <p className="text-slate-500 text-sm mt-1">Here is a quick overview of your scheduling links and scheduled meetings.</p>
       </div>
 
@@ -86,9 +86,9 @@ const Dashboard = () => {
       ) : (
         <>
           {/* Statistics Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
             {/* Stat Card 1 */}
-            <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-soft flex items-center gap-5">
+            <div className="bg-white p-5 sm:p-6 rounded-2xl border border-slate-100 shadow-soft flex items-center gap-4 sm:gap-5">
               <div className="h-12 w-12 bg-blue-50 text-brand-500 rounded-xl flex items-center justify-center shadow-inner">
                 <Clock className="h-6 w-6" />
               </div>
@@ -99,7 +99,7 @@ const Dashboard = () => {
             </div>
 
             {/* Stat Card 2 */}
-            <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-soft flex items-center gap-5">
+            <div className="bg-white p-5 sm:p-6 rounded-2xl border border-slate-100 shadow-soft flex items-center gap-4 sm:gap-5">
               <div className="h-12 w-12 bg-emerald-50 text-emerald-500 rounded-xl flex items-center justify-center shadow-inner">
                 <Calendar className="h-6 w-6" />
               </div>
@@ -110,7 +110,7 @@ const Dashboard = () => {
             </div>
 
             {/* Stat Card 3 */}
-            <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-soft flex items-center gap-5">
+            <div className="bg-white p-5 sm:p-6 rounded-2xl border border-slate-100 shadow-soft flex items-center gap-4 sm:gap-5">
               <div className="h-12 w-12 bg-indigo-50 text-indigo-500 rounded-xl flex items-center justify-center shadow-inner">
                 <Users className="h-6 w-6" />
               </div>
@@ -121,10 +121,10 @@ const Dashboard = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 flex-1 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 flex-1 items-start">
             {/* Upcoming Meetings List */}
-            <div className="bg-white rounded-2xl border border-slate-100 shadow-soft lg:col-span-2 p-6">
-              <div className="flex items-center justify-between mb-6">
+            <div className="bg-white rounded-2xl border border-slate-100 shadow-soft lg:col-span-2 p-5 sm:p-6">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6">
                 <h3 className="font-bold text-slate-800 text-base">Next 3 Scheduled Meetings</h3>
                 <Link to="/meetings" className="text-xs font-bold text-brand-500 hover:text-brand-600 flex items-center gap-1.5 transition-colors">
                   View all meetings <ArrowRight className="h-4 w-4" />
@@ -161,7 +161,7 @@ const Dashboard = () => {
             </div>
 
             {/* Quick Actions Panel */}
-            <div className="bg-white rounded-2xl border border-slate-100 shadow-soft p-6 space-y-6">
+            <div className="bg-white rounded-2xl border border-slate-100 shadow-soft p-5 sm:p-6 space-y-6">
               <h3 className="font-bold text-slate-800 text-base">Quick Actions</h3>
               <div className="space-y-3">
                 <Link to="/events" className="flex items-center justify-between p-4 rounded-xl border border-slate-100 hover:border-brand-100 hover:bg-brand-50/10 text-sm font-semibold text-slate-700 transition-all group">

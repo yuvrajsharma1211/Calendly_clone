@@ -160,11 +160,11 @@ const Availability = () => {
   ];
 
   return (
-    <div className="space-y-6 flex-1 flex flex-col">
+    <div className="space-y-5 sm:space-y-6 flex-1 flex flex-col min-w-0">
       {/* Header section */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h2 className="text-2xl font-bold text-slate-800 tracking-tight">Availability</h2>
+          <h2 className="text-xl sm:text-2xl font-bold text-slate-800 tracking-tight">Availability</h2>
           <p className="text-slate-500 text-sm mt-1">Configure the weekly hours when you are open to book meetings.</p>
         </div>
         <button
@@ -200,23 +200,23 @@ const Availability = () => {
           <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-brand-500"></div>
         </div>
       ) : (
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 flex-1 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 flex-1 items-start">
           {/* Main Availability Grid */}
-          <div className="bg-white rounded-2xl border border-slate-100 shadow-soft lg:col-span-2 p-6">
+          <div className="bg-white rounded-2xl border border-slate-100 shadow-soft lg:col-span-2 p-5 sm:p-6">
             <h3 className="font-bold text-slate-800 text-base mb-6">Weekly Hours</h3>
             
             <div className="space-y-4">
               {schedule.map((day) => (
                 <div
                   key={day.day_of_week}
-                  className={`flex flex-col sm:flex-row sm:items-center justify-between p-4 rounded-xl border transition-all ${
+                  className={`flex flex-col sm:flex-row sm:items-center justify-between p-4 rounded-xl border transition-all gap-3 sm:gap-0 ${
                     day.active 
                       ? 'border-slate-100 bg-white shadow-sm' 
                       : 'border-slate-100/50 bg-slate-50/50 opacity-60'
                   }`}
                 >
                   {/* Day Toggling Checkbox */}
-                  <div className="flex items-center gap-4 min-w-[140px] mb-3 sm:mb-0">
+                  <div className="flex items-center gap-4 min-w-0 mb-1 sm:mb-0">
                     <label className="relative inline-flex items-center cursor-pointer">
                       <input
                         type="checkbox"
@@ -233,11 +233,11 @@ const Availability = () => {
 
                   {/* Hour Selection Selectors */}
                   {day.active ? (
-                    <div className="flex items-center gap-2 flex-1 sm:justify-end">
+                    <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 flex-1 sm:justify-end min-w-0">
                       <select
                         value={day.start_time}
                         onChange={(e) => handleTimeChange(day.day_of_week, 'start_time', e.target.value)}
-                        className="border border-slate-200 rounded-lg px-2.5 py-1.5 text-xs font-semibold focus:outline-none focus:border-brand-500 bg-slate-50/50"
+                        className="w-full sm:w-auto border border-slate-200 rounded-lg px-2.5 py-2 text-xs font-semibold focus:outline-none focus:border-brand-500 bg-slate-50/50"
                       >
                         {timeOptions.map((opt) => (
                           <option key={opt.value} value={opt.value}>
@@ -245,11 +245,11 @@ const Availability = () => {
                           </option>
                         ))}
                       </select>
-                      <span className="text-xs font-bold text-slate-400">to</span>
+                      <span className="text-xs font-bold text-slate-400 self-center">to</span>
                       <select
                         value={day.end_time}
                         onChange={(e) => handleTimeChange(day.day_of_week, 'end_time', e.target.value)}
-                        className="border border-slate-200 rounded-lg px-2.5 py-1.5 text-xs font-semibold focus:outline-none focus:border-brand-500 bg-slate-50/50"
+                        className="w-full sm:w-auto border border-slate-200 rounded-lg px-2.5 py-2 text-xs font-semibold focus:outline-none focus:border-brand-500 bg-slate-50/50"
                       >
                         {timeOptions.map((opt) => (
                           <option key={opt.value} value={opt.value}>
@@ -270,7 +270,7 @@ const Availability = () => {
 
           {/* Timezone Configuration Sidebar */}
           <div className="space-y-6">
-            <div className="bg-white rounded-2xl border border-slate-100 shadow-soft p-6">
+            <div className="bg-white rounded-2xl border border-slate-100 shadow-soft p-5 sm:p-6">
               <h3 className="font-bold text-slate-800 text-base mb-4">Timezone</h3>
               <p className="text-xs text-slate-500 mb-4 leading-relaxed">
                 Choose the primary timezone you will use to generate availability slots. Your booking page will display slots matching this timezone.
