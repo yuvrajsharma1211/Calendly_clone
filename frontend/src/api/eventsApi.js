@@ -2,25 +2,25 @@ import axiosInstance from './axiosConfig';
 
 export const eventsApi = {
   // Get all event types
-  getAll: async () => {
+  async getAll(){
     const response = await axiosInstance.get('/events');
     return response.data;
   },
 
   // Create new event type
-  create: async (eventData) => {
+  async create(eventData){
     const response = await axiosInstance.post('/events', eventData);
     return response.data;
   },
 
   // Update event type
-  update: async (id, eventData) => {
+  async update(id, eventData){
     const response = await axiosInstance.put(`/events/${id}`, eventData);
     return response.data;
   },
 
   // Delete event type
-  delete: async (id) => {
+  async delete(id){
     const response = await axiosInstance.delete(`/events/${id}`);
     return response.data;
   }

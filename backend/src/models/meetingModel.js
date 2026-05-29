@@ -2,7 +2,7 @@ const db = require('../config/db');
 
 const MeetingModel = {
   // Get all meetings
-  getAll: async () => {
+  async getAll(){
     const query = `
       SELECT m.*, e.title AS event_title, e.duration AS event_duration 
       FROM meetings m
@@ -14,7 +14,7 @@ const MeetingModel = {
   },
 
   // Get upcoming meetings (scheduled & today onwards)
-  getUpcoming: async () => {
+  async getUpcoming(){
     const query = `
       SELECT m.*, e.title AS event_title, e.duration AS event_duration 
       FROM meetings m
@@ -27,7 +27,7 @@ const MeetingModel = {
   },
 
   // Get past meetings or cancelled meetings
-  getPast: async () => {
+  async getPast(){
     const query = `
       SELECT m.*, e.title AS event_title, e.duration AS event_duration 
       FROM meetings m
@@ -40,7 +40,7 @@ const MeetingModel = {
   },
 
   // Check if a time slot is already booked for that date to prevent double bookings
-  checkConflict: async (meeting_date, start_time, end_time) => {
+  async checkConflict(meeting_date, start_time, end_time) {
     const query = `
       SELECT * FROM meetings 
       WHERE meeting_date = ? 
@@ -61,7 +61,7 @@ const MeetingModel = {
   },
 
   // Find all booked meetings on a given date to exclude them from dynamic slot generation
-  getBookedSlotsByDate: async (meeting_date) => {
+  async getBookedSlotsByDate(meeting_date) {
     const query = `
       SELECT start_time, end_time FROM meetings 
       WHERE meeting_date = ? AND status = 'scheduled'
@@ -71,7 +71,7 @@ const MeetingModel = {
   },
 
   // Create booking
-  create: async (meetingData) => {
+  async create(meetingData) {
     const { event_type_id, invitee_name, invitee_email, meeting_date, start_time, end_time } = meetingData;
     const [result] = await db.query(
       `INSERT INTO meetings (event_type_id, invitee_name, invitee_email, meeting_date, start_time, end_time, status) 
@@ -82,7 +82,7 @@ const MeetingModel = {
   },
 
   // Cancel meeting
-  cancel: async (id) => {
+  async cancel(id) {
     const [result] = await db.query(
       `UPDATE meetings SET status = 'cancelled' WHERE id = ?`,
       [id]

@@ -13,7 +13,7 @@ const slugify = (text) => {
 
 const EventController = {
   // GET /api/events
-  getAllEvents: async (req, res) => {
+  async getAllEvents(req, res) {
     try {
       const events = await EventModel.getAll();
       return res.status(200).json({ success: true, data: events });
@@ -24,7 +24,7 @@ const EventController = {
   },
 
   // POST /api/events
-  createEvent: async (req, res) => {
+  async createEvent(req, res) {
     try {
       const { title, description, duration } = req.customBody || req.body;
       let { slug } = req.customBody || req.body;
@@ -58,7 +58,7 @@ const EventController = {
   },
 
   // PUT /api/events/:id
-  updateEvent: async (req, res) => {
+  async updateEvent(req, res) {
     try {
       const { id } = req.params;
       const { title, description, duration } = req.body;
@@ -97,7 +97,7 @@ const EventController = {
   },
 
   // DELETE /api/events/:id
-  deleteEvent: async (req, res) => {
+  async deleteEvent(req, res) {
     try {
       const { id } = req.params;
       const success = await EventModel.delete(id);

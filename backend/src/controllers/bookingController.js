@@ -4,8 +4,8 @@ const SlotService = require('../services/slotService');
 
 const BookingController = {
   // GET /api/bookings/slots/:slug
-  // Query param: date=YYYY-MM-DD
-  getAvailableSlots: async (req, res) => {
+  
+  async getAvailableSlots(req, res) {
     try {
       const { slug } = req.params;
       const { date } = req.query;
@@ -38,7 +38,7 @@ const BookingController = {
   },
 
   // POST /api/bookings
-  createBooking: async (req, res) => {
+  async createBooking(req, res) {
     try {
       const { event_type_id, invitee_name, invitee_email, meeting_date, start_time, end_time } = req.body;
 

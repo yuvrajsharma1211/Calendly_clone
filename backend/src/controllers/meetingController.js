@@ -2,7 +2,7 @@ const MeetingModel = require('../models/meetingModel');
 
 const MeetingController = {
   // GET /api/meetings
-  getMeetings: async (req, res) => {
+  async getMeetings(req, res) {
     try {
       const upcoming = await MeetingModel.getUpcoming();
       const past = await MeetingModel.getPast();
@@ -21,7 +21,7 @@ const MeetingController = {
   },
 
   // PUT /api/meetings/:id/cancel
-  cancelMeeting: async (req, res) => {
+  async cancelMeeting(req, res) {
     try {
       const { id } = req.params;
       

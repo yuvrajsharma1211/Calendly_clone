@@ -1,17 +1,17 @@
 const AvailabilityModel = require('../models/availabilityModel');
 const MeetingModel = require('../models/meetingModel');
 
-/**
- * Service to handle dynamic time-slot generation and filtering.
- */
+
+
 const SlotService = {
   /**
    * Generates available time slots for a specific event type on a specific date.
    * @param {Object} eventType - The event type object (contains duration)
    * @param {string} dateString - Format YYYY-MM-DD
+   * 
    * @returns {Promise<Array>} List of available slots { start_time, end_time }
    */
-  generateAvailableSlots: async (eventType, dateString) => {
+  async generateAvailableSlots(eventType, dateString) {
     // 1. Determine day of the week for the requested date
     const dateObj = new Date(dateString);
     if (isNaN(dateObj.getTime())) {
@@ -59,7 +59,7 @@ const SlotService = {
         start_time: minutesToTime(currentSlotStart),
         end_time: minutesToTime(currentSlotEnd)
       });
-      currentSlotStart += duration; // increment by duration
+      currentSlotStart += duration; 
     }
 
     // 4. Retrieve existing meetings for this date to exclude booked slots
@@ -83,13 +83,13 @@ const SlotService = {
       );
       return !isBooked;
     });
+    
 
     // 6. Special case: If the date is TODAY, filter out past time slots
-    const todayStr = new Date().toISOString().split('T')[0];
+    const todayStr = new Date().toISOString().split('T')[0]; // only date part YYYY-MM-DD
     if (dateString === todayStr) {
       const now = new Date();
-      // Adjust to Eastern Time (or matching the user's timezone)
-      // For simplicity in a standard interview clone, let's filter relative to system current time.
+      
       const currentMinutes = now.getHours() * 60 + now.getMinutes();
 
       availableSlots = availableSlots.filter(slot => {

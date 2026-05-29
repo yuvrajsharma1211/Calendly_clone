@@ -7,7 +7,7 @@ const Availability = () => {
   const [error, setError] = useState(null);
   const [successMessage, setSuccessMessage] = useState('');
   
-  // Weekly structure
+ 
   const DAYS_OF_WEEK = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
   
   // Weekly availability state
@@ -148,7 +148,7 @@ const Availability = () => {
 
   const timeOptions = generateTimeOptions();
   
-  // Timezone options (standard)
+  
   const timezones = [
     { value: 'America/New_York', label: 'Eastern Time (ET) - America/New_York' },
     { value: 'America/Chicago', label: 'Central Time (CT) - America/Chicago' },

@@ -51,7 +51,7 @@ function App() {
           }
         />
 
-        {/* Public / External Booking Page Flows (No Sidebar Sidebar Layout) */}
+        {/* Public / External Booking Page Flows (No Sidebar Layout) */}
         <Route path="/book/:slug" element={<BookingPage />} />
         <Route path="/booking-confirmation" element={<BookingConfirmation />} />
       </Routes>

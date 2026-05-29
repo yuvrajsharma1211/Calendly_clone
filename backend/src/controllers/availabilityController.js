@@ -2,7 +2,7 @@ const AvailabilityModel = require('../models/availabilityModel');
 
 const AvailabilityController = {
   // GET /api/availability
-  getAvailability: async (req, res) => {
+  async getAvailability(req, res) {
     try {
       const availability = await AvailabilityModel.getAll();
       return res.status(200).json({ success: true, data: availability });
@@ -18,7 +18,7 @@ const AvailabilityController = {
   //   { day_of_week: 'Monday', start_time: '09:00:00', end_time: '17:00:00', timezone: 'America/New_York', active: true },
   //   { day_of_week: 'Tuesday', start_time: '09:00:00', end_time: '17:00:00', timezone: 'America/New_York', active: false }
   // ]
-  updateAvailability: async (req, res) => {
+  async updateAvailability(req, res){
     try {
       const schedule = req.body;
 

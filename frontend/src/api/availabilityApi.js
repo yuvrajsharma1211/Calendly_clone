@@ -2,13 +2,13 @@ import axiosInstance from './axiosConfig';
 
 export const availabilityApi = {
   // Get weekly availability
-  get: async () => {
+  async  get(){
     const response = await axiosInstance.get('/availability');
     return response.data;
   },
 
   // Update weekly availability
-  update: async (schedule) => {
+  async update(schedule){
     const response = await axiosInstance.put('/availability', schedule);
     return response.data;
   }
